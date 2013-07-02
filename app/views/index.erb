@@ -1,0 +1,8 @@
+
+<form action="/enter_race" method="post">
+  <input type="text" name="player_one" placeholder="Player 1" 
+    value="<%=@player1.player_name if @player1 %>">
+  <input type="text" name="player_two" placeholder="Player 2"
+    value="<%=@player2.player_name if @player2 %>">
+  <input type="submit">
+</form>

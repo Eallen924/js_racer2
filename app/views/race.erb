@@ -1,0 +1,37 @@
+<script>
+  window.playerIds = [<%= @player1.id %>, <%= @player2.id %>]; 
+</script>
+
+<div id="content">
+    <ol id="player1" data-player-id="<%= @player1.id %>">
+      <li class="active"></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ol> 
+    <ol id="player2" data-player-id="<%= @player2.id %>">
+      <li class="active"></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ol>
+  </div>
+
+  <div id="notify_winner"></div>
+  <div class="reset hidden">
+  <form action="/enter_race" method="post">
+    <input type="hidden" name="player1" value="<%= @player1.player_name %>">
+    <input type="hidden" name="player2" value="<%= @player2.player_name %>">
+    <input type="submit" class="reset_game_button">
+  </form>
+</div>

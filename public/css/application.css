@@ -1,0 +1,55 @@
+#content {
+  min-height: 100px;
+  width: 600px;
+  border: 0px solid black;
+  margin: 20px auto 0 auto;
+  text-align: center;
+  padding: 0;
+
+}
+
+ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+ol li {
+  margin: 0;
+  padding: 0;
+  height: 56px;
+  width: 56px;
+  display: inline-block;
+  border: 1px solid gray;
+}
+
+.active {
+  background-color: black;
+}
+
+#notify_winner {
+  width: 600px;
+  margin: 20px auto 0 auto;
+  text-align: center;
+  padding: 0;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.reset {
+  width: 200px;
+  height: 30px;
+  border-radius: 4px;
+  background-color: black;
+  color: white;
+  margin: 20px auto 0 auto;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.reset:hover {
+  background-color: red;
+}
+
