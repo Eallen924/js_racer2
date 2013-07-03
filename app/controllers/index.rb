@@ -6,7 +6,7 @@ end
 post '/enter_race' do
   @player1 = Player.find_or_create_by_player_name(params[:player_one])
   @player2 = Player.find_or_create_by_player_name(params[:player_two])
-
+  @players = [@player1, @player2]
   if @player1.errors.any? || @player2.errors.any?
     erb :index
   else

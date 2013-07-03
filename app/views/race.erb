@@ -1,37 +1,25 @@
 <script>
-  window.playerIds = [<%= @player1.id %>, <%= @player2.id %>]; 
+  // window.playerIds = @players; 
 </script>
 
+
 <div id="content">
-    <ol id="player1" data-player-id="<%= @player1.id %>">
+  <% @players.each_with_index do |player, index| %>
+     
+    <ol class="track" id="player<%= player.id %>" data-player-id="<%= player.id %>" data-player-key='<%= 80 + index %>'>
       <li class="active"></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
+      <% 9.times do %>
+        <li></li>
+      <% end %>
     </ol> 
-    <ol id="player2" data-player-id="<%= @player2.id %>">
-      <li class="active"></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ol>
-  </div>
+    <% end %>
 
   <div id="notify_winner"></div>
   <div class="reset hidden">
   <form action="/enter_race" method="post">
-    <input type="hidden" name="player1" value="<%= @player1.player_name %>">
-    <input type="hidden" name="player2" value="<%= @player2.player_name %>">
+  <% @players.each_with_index do |player, index| %>
+    <input type="hidden" name="player<%= index + 1 %>" value="<%= player.player_name %>">
+  <% end %>
     <input type="submit" class="reset_game_button">
   </form>
 </div>
